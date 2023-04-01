@@ -64,7 +64,7 @@ public class RecordAudioService : IRecordAudioService
         return storagePath;
     }
 
-    private void SetAudioFilePaht()
+    private void SetAudioFilePath()
     {
         string fileName = "/Record_" + DateTime.UtcNow.ToString("ddMMM_hhmmss") + ".mp3";
         var path = Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
