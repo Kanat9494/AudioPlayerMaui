@@ -1,5 +1,10 @@
 ﻿namespace AudioPlayerMaui.Services;
 
-internal class IAudioPlayerService
+public interface IAudioPlayerService
 {
+    void PlayAudio(string filePath);
+    void Pause();
+    void Stop();
+    string GetCurrentPlayTime();
+    bool CheckFinishedPlayingAudio();
 }
