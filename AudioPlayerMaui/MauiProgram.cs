@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using AudioPlayerMaui.Platforms.Android.Services;
+using Microsoft.Extensions.Logging;
 
 namespace AudioPlayerMaui;
 
@@ -19,6 +20,13 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
-		return builder.Build();
+#if ANDROID 
+        builder.Services.AddTransient<IAudioPlayerService, AudioPlayerService>();
+        builder.Services.AddTransient<IRecordAudioService, RecordAudioService>();
+#endif
+
+		builder.Services.AddTransient<PlayerPage>();
+		builder.Services.AddTransient<AppShell>();
+        return builder.Build();
 	}
 }
