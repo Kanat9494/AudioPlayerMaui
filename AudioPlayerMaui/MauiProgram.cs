@@ -26,7 +26,7 @@ public static class MauiProgram
 #endif
 
 		builder.Services.AddTransient<PlayerPage>();
-		builder.Services.AddTransient<AppShell>();
+		//builder.Services.AddTransient<AppShell>();
         return builder.Build();
 	}
 }
